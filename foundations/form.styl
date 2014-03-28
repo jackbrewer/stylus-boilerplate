@@ -57,8 +57,8 @@ $textInputPadding = 5px 10px
 .text-input
   padding $textInputPadding
   background-color #fff
-  border 1px solid $colorBorder
-  line-height $baseLineHeight
+  border 1px solid $color--grey
+  line-height $base--line-height
   transition border-color 0.1s ease, box-shadow 0.2s ease
   font-family inherit
   font-size inherit
@@ -100,7 +100,7 @@ input[type="file"]
 //
 
 .form-row
-  margin-bottom $baseMarginBottom
+  margin-bottom $base--spacing
 
   // The label wraps the label text (.form-label-text) and form input
   label
@@ -327,7 +327,7 @@ input[type="file"]
 //
 
 .form-error
-  margin-bottom $baseMarginBottom
+  margin-bottom $base--spacing
   background-color $color--error
   border-radius 3px
   padding 10px
