@@ -1,5 +1,7 @@
 // NEEDS REVIEW
 // * Complete rewrite to match better form markup
+// * Dont rely on attribute selectors
+// * Decide if bespoke variables are required
 
 //
 // FORM STYLES
@@ -64,7 +66,7 @@ $textInputPadding = 5px 10px
   font-size inherit
   &:focus
     border-color $color--primary
-    box-shadow 0px 0px 5px rgba($color--primary, 0.8)
+    box-shadow 0 0 5px rgba($color--primary, 0.8)
     outline 0
 
 

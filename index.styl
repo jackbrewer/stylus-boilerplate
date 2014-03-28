@@ -64,6 +64,6 @@ if $environment == 'development'
   @import 'dev/sandbox'
 
   // Change the $debug variable in settings.styl to activate debug mode.
-  if $debugMode
+  if $debug--mode == true
     @import 'dev/debug'
 
