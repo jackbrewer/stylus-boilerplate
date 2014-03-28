@@ -1,0 +1,17 @@
+//
+// IE8 SPECIFIC STYLESHEET
+// =======================
+// This file is loaded instead of the default index stylesheet for IE8
+// It includes the same content, but sets some variables to allow for moving
+// content outside media queries etc.
+//
+// NOTE: No styles should be written in this file. Write IE specific hacks in
+// with regular code, using the ie() mixin to scope your IE only styles.
+//
+
+
+$no-mq = true
+$is-ie = true
+$is-ie--version = 8
+
+@import 'index'

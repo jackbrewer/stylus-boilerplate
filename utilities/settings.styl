@@ -1,0 +1,103 @@
+//
+// SETTINGS
+// ========
+// Project specific setings which can be changed to modify the basic look and
+// feel of the project with little effort.
+//
+// 1. BREAKPOINTS AND MEDIA QUERIES
+// 2. TYPEFACES
+// 3. COLOURS
+// 4. BASE STYLES
+// 5. GRID
+// 6. DEBUG STYLING
+// 7. DEFAULT ENVIRONMENT
+//
+
+
+//
+// 1. BREAKPOINTS AND MEDIA QUERIES
+// Setup standard widths to pass to media queries
+//
+
+$mq--mobile--portrait  = 0px
+$mq--mobile--landscape = 400px
+$mq--tablet--portrait  = 550px
+$mq--tablet--landscape = 800px
+$mq--desktop--small    = 960px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+// Common aliases
+$mq--mobile  = $mq--mobile--portrait
+$mq--tablet  = $mq--tablet--portrait
+$mq--desktop = $mq--desktop--small
+
+
+//
+// 2. TYPEFACES
+//
+
+$font--arial   = Arial, Helvetica, sans-serif
+$font--georgia = Georgia, serif
+
+
+//
+// 3. COLOURS
+//
+
+// Common Project Colours
+$color--blue  = #2b6ede
+$color--black = #222
+$color--grey  = #777
+$color--white = #fff
+
+// Brand Colours
+$color--primary = $color--blue
+
+// Default Notification Colours
+$color--success = #47a967
+$color--notice = #4791a9
+$color--warning = #dc7f2a
+$color--error = #ca4427
+
+
+//
+// 4. BASE STYLES
+//
+
+$base--font-heading = $font-family--arial
+$base--font-body    = $font-family--georgia
+$base--font-color   = $color--black
+$base--font-size    = 18px
+$base--line-height  = 1.5
+$base--spacing      = ($base--line-height)em
+$base--body-bg      = $color--white
+
+
+//
+// 5. GRID
+//
+
+$grid--gutter = 2em
+
+
+//
+// 6. DEBUG STYLING
+// Options are
+// * error: Only critical bugs are shown
+// * warning: Show error and warning bugs
+// * all: Show error and warning bugs, as well as general tips / minor bugs
+//
+
+$debug--mode = false
+$debug--level = 'all'
+
+
+//
+// 7. DEFAULT ENVIRONMENT
+// Projects may optionally pass through an environment variable to dictate
+// whether development specific stylesheets are compiled into the final CSS.
+// Set this variable to anything other than 'development' to manually override.
+//
+
+$environment ?= 'development'

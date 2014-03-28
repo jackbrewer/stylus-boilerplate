@@ -1,0 +1,72 @@
+// NEEDS REVIEW
+// * Refactor colours to variables?
+
+//
+// BUTTONS
+// =======
+//
+
+
+// Firefox specific reset to better match other browsers.
+button.btn::-moz-focus-inner
+  border none
+  padding 0
+
+
+//
+// BASE STYLES
+// Base styles to persuade `<a>`, `<button>` and `<input>` elements to look the
+// same as each other, across various browsers.
+//
+
+.btn
+  display inline-block
+  border none
+  vertical-align middle
+  cursor pointer
+  overflow visible // removes padding in IE
+
+  // Presentational Styles
+  height 3em
+  line-height @height
+  padding 0 1em
+  background-color #ccc
+  font-size 1em
+  font-family inherit
+  color inherit
+
+  &:focus,
+  &:hover
+    background-color #aaa
+    text-decoration none
+
+  &:active
+    background-color #888
+
+
+//
+// UNSTYLED BUTTON
+// Simple reset to make button elements look more like text links.
+//
+
+.btn--unstyled
+  border none
+  background none
+
+
+//
+// BUTTON MODIFIERS
+// Remember to add button variation modifier examples to the style guide page.
+//
+
+.btn--primary
+  color #fff
+  background-color $color--primary
+
+  &:focus,
+  &:hover
+    color #fff
+    background-color lighten($color--primary, 10%)
+
+  &:active
+    background-color darken($color--primary, 20%)

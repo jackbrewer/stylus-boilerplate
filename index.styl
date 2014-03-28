@@ -1,0 +1,69 @@
+//
+// INDEX STYLESHEET
+// ================
+// All Stylus imports should live in here.
+//
+
+
+//
+// SETUP
+//
+
+@import 'stylus-mixins'
+@import 'utilities/settings' // Review all variable implementations
+
+
+//
+// FOUNDATIONS
+// Base HTML and generic site-wide elements
+//
+
+@import 'foundations/base'
+@import 'foundations/typography'
+@import 'foundations/form'
+@import 'foundations/table'
+
+@import 'foundations/structure'
+@import 'foundations/grid'
+@import 'foundations/icons'
+@import 'foundations/buttons'
+
+
+//
+// LAYOUT SECTIONS
+//
+
+@import 'layout/main-header'
+@import 'layout/main-navigation'
+@import 'layout/main-content'
+@import 'layout/main-footer'
+
+
+//
+// GENERIC COMPONENTS
+//
+
+
+//
+// SPECIALISED COMPONENTS
+//
+
+
+//
+// EXTERNAL PLUGINS
+//
+
+
+//
+// DEVELOPMENT STYLES
+//
+
+if $environment == 'development'
+
+  @import 'dev/style-guide'
+  @import 'dev/sandbox'
+
+  // Change the $debug variable in settings.styl to activate debug mode.
+  if $debugMode
+    @import 'dev/debug'
+

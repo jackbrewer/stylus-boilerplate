@@ -1,0 +1,165 @@
+//
+// TYPOGRAPHIC STYLES
+// ==================
+// Base typography styles
+//
+// Layout styles for typographic elements should live in base.styl
+// Form and Table styles live in their respective stylesheets
+
+
+//
+// SELECTED TEXT
+//
+
+::-moz-selection
+  color #fff
+  background $color--primary
+  text-shadow none
+::selection
+  color #fff
+  background $color--primary
+  text-shadow none
+
+
+//
+// BASE STYLES
+//
+
+body
+  font-family $base--font-body
+  font-size $base--font-size
+  line-height $base--line-height
+  color $base--font-color
+  font-weight normal
+
+
+//
+// HEADINGS
+// Uses a Double-stranded heading hierarchy to preserve the document outline.
+// http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  font-family $base--font-heading
+  font-weight bold
+  line-height 1
+  color #222
+
+h1, .h1
+  font-size 2.375em
+h2, .h2
+  font-size 1.6em
+h3, .h3
+  font-size 1.4em
+h4, .h4
+  font-size 1.2em
+h5, .h5
+  font-size 1.1em
+h6, .h6
+  font-size 1em
+
+
+//
+// LINKS & BUTTONS
+//
+
+a
+  color $color--primary
+  text-decoration none
+
+  &:focus,
+  &:hover
+    color #222
+    text-decoration underline
+
+  &:active
+    color #222
+
+button
+  cursor pointer
+  font-family inherit
+
+
+//
+// EMPHASIS
+//
+
+blockquote, q, em, dfn, i, cite, var
+  font-style italic
+
+th, strong, dt, b
+  font-weight bold
+
+
+//
+// QUOTES
+//
+
+blockquote p:before, blockquote p:after, q:before, q:after
+  content ''
+
+blockquote
+  font-size 1.125em
+
+  p
+    margin-bottom 0
+
+
+//
+// TEXT MARKING
+//
+
+ins
+  text-decoration none
+  border-bottom 3px double
+
+del, s
+  text-decoration line-through
+
+u
+  text-decoration underline
+
+mark
+  background-color #f0d929
+  color #222
+  margin-left -2px
+  margin-right -2px
+  padding-left 2px
+  padding-right 2px
+
+
+//
+// PRE-FORMATTED TEXT / CODE BLOCKS
+//
+
+pre
+code
+  font-family 'Monaco', monospace
+
+
+//
+// MISC PRESONTATIONAL ELEMENTS
+//
+
+address
+  font-style normal
+
+abbr
+  border-bottom 1px dotted
+
+small
+  font-size 0.8em
+
+sub,
+sup
+  position relative
+  font-size 75%
+  line-height 0
+  vertical-align baseline
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.25em

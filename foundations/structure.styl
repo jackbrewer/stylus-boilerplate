@@ -1,0 +1,52 @@
+// NEEDS REVIEW
+// * Formalise the purpose of this file, and what should live here
+
+//
+// STRUCTURAL STYLES
+// =================
+// Blocks of code which generically lay out blocks of content.
+// Avoid adding site specific styles in here.
+//
+// 1. Centering
+// 2. Media Block
+//
+
+
+//
+// 1. CENTERING
+// Can be used to center non-floated content. Currently used within the
+// toolbar and to center content within the `page-content` wrapper.
+//
+
+.centering
+  margin 0 auto
+  max-width 1000px
+  padding 0 20px
+  clearfix()
+
+
+//
+// 2. MEDIA BLOCK
+// Used to easily position images next to text.
+//
+
+.media,
+.body
+  overflow hidden
+
+.media
+  margin 10px
+
+  .img
+    float left
+    margin-right 10px
+
+    img
+      display block
+
+.media-alt
+
+  .img
+    float right
+    margin-right 0
+    margin-left 10px
