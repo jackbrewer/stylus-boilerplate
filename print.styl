@@ -1,6 +1,6 @@
 // NEEDS REVIEW
 // * Formalise how this file is added to project
-//   (separate stylesheet, on imported - introduces multiple lint errors)
+//   (separate stylesheet, or imported - introduces multiple lint errors)
 
 //
 // PRINT STYLES
@@ -31,7 +31,6 @@
     content " (" attr(title) ")"
 
   // Don't show links for images, or javascript/internal links
-
   a[href^="javascript:"]:after,
   a[href^="#"]:after
     content ""
