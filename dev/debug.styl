@@ -44,7 +44,7 @@ debugStyle($message, $outlineWidth, $outlineColor)
 
 // Check for empty elements.
 // Avoid special case where images report as being empty.
-:not(img):not(input):not(textarea):empty
+:not(img):not(input):not(textarea):not(hr):empty
   debugWarning('Element is empty')
 
 // Avoid using inline styles.
