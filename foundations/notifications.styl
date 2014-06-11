@@ -1,0 +1,71 @@
+//
+// NOTIFICATIONS
+// =============
+//
+
+
+//
+// Notification
+//
+
+.notification
+  margin-left 0
+  list-style none
+  padding .75em
+  margin-bottom $base--spacing
+  background lighten($color--grey, 70%)
+
+.notification--large
+  padding 1.5em
+  p, ul, ol, dl
+    margin-top ($base--spacing/2)
+
+.notification--info
+  border-left-color $color--notice
+  background lighten($color--notice, 70%)
+
+.notification--warning
+  border-left-color $color--warning
+  background lighten($color--warning, 70%)
+
+.notification--error
+  border-left-color $color--error
+  background lighten($color--error, 70%)
+
+.notification--success
+  border-left-color $color--success
+  background lighten($color--success, 70%)
+
+
+//
+// Notification Content
+//
+
+.notification__title
+  margin-bottom 0
+  font-weight normal
+  font-size 1.2em
+
+.notification
+  p, ul, ol, dl
+    margin-bottom 0
+    margin-top ($base--spacing/4)
+
+  p:first-child,
+  ul:first-child,
+  ol:first-child,
+  dl:first-child
+    margin-top 0
+
+
+//
+// Notification List
+//
+
+.notification-list
+  .notification
+    margin-bottom 5px
+
+.notification-list--collapsed
+  .notification
+    margin-bottom 0
