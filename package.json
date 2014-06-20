@@ -1,0 +1,39 @@
+{
+  "name": "generator-stylus-boilerplate",
+  "version": "0.0.1",
+  "description": "Yeoman generator for a stylus boilerplate",
+  "license": "New BSD",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jackbrewer/stylus-boilerplate.git"
+  },
+  "author": {
+    "name": "Jack Brewer",
+    "email": "jack.brewer@clock.co.uk",
+    "url": "https://github.com/jackbrewer"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0",
+    "yosay": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
