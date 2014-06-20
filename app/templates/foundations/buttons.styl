@@ -42,16 +42,6 @@ button.btn::-moz-focus-inner
 
 
 //
-// UNSTYLED BUTTON
-// Simple reset to make button elements look more like text links.
-//
-
-.btn--unstyled
-  border none
-  background none
-
-
-//
 // BUTTON MODIFIERS
 // Remember to add button variation modifier examples to the style guide page.
 //
@@ -77,3 +67,20 @@ button.btn::-moz-focus-inner
 .btn-group
   .btn + .btn
     margin-left 0.5em
+
+
+//
+// UNSTYLED BUTTON
+// Simple reset to make button elements look more like text links.
+//
+
+.text-btn
+  padding 0
+  margin 0
+  border none
+  background none
+  font inherit
+  @extend a
+
+  &:focus
+    outline none

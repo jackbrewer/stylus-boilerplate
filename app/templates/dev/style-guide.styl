@@ -12,16 +12,16 @@
   position fixed
   top 10px
   right 8px
-  background-color #333
+  background-color $color--grey
   height 24px
   margin 0 -40px
   padding 0 40px
   font-family Arial, sans-serif
-  color #fff
+  color $color--black
   transform rotate(45deg)
   text-align center
   &:hover
-    background-color #666
+    background-color lighten($color--grey, 20%)
     text-decoration none
 
 
@@ -38,8 +38,8 @@
     border-radius 17.544%
 
   p
-    color #000
-    font-size 12px
+    color $color--black
+    font-size em(12)
     font-family Arial, Helvetica, sans-serif
 
 
@@ -62,10 +62,10 @@
     padding 0 15px
     text-overflow ellipsis
     overflow hidden
-    color #000
-    font-size 12px
+    color $color--black
+    font-size em(12)
     font-family Arial, Helvetica, sans-serif
     white-space nowrap
 
   .light
-    color #fff
+    color $color--white
