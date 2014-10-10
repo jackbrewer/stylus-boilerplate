@@ -4,12 +4,6 @@
 //
 
 
-// Firefox specific reset to better match other browsers.
-button.btn::-moz-focus-inner
-  border none
-  padding 0
-
-
 //
 // BASE STYLES
 // Base styles to persuade `<a>`, `<button>` and `<input>` elements to look the
@@ -32,7 +26,7 @@ button.btn::-moz-focus-inner
   color inherit
   background-color $color--grey
 
-  &:focus,
+  &:focus
   &:hover
     text-decoration none
     background-color lighten($color--grey, 10%)
@@ -40,6 +34,8 @@ button.btn::-moz-focus-inner
   &:active
     background-color darken($color--grey, 20%)
 
+  &:focus
+    outline 0
 
 //
 // BUTTON MODIFIERS
@@ -50,13 +46,22 @@ button.btn::-moz-focus-inner
   color $color--white
   background-color $color--primary
 
-  &:focus,
+  &:focus
   &:hover
     color $color--white
     background-color lighten($color--primary, 10%)
 
   &:active
     background-color darken($color--primary, 20%)
+
+//
+// BUTTON GROUP
+// Contains multiple buttons and adds spacing between them.
+//
+
+.btn--block
+  display block
+  width 100%
 
 
 //
@@ -79,6 +84,7 @@ button.btn::-moz-focus-inner
   margin 0
   border none
   background none
+  cursor pointer
   font inherit
   @extend a
 

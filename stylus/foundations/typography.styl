@@ -32,6 +32,8 @@ html
   line-height $base--line-height
   color $base--font-color
   font-weight normal
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
 
 body
   font-size 1em
@@ -43,7 +45,7 @@ body
 // http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
 //
 
-h1, h2, h3, h4, h5, h6,
+h1, h2, h3, h4, h5, h6
 .h1, .h2, .h3, .h4, .h5, .h6
   font-family $base--font-heading
   font-weight bold
@@ -72,17 +74,13 @@ a
   color $color--primary
   text-decoration none
 
-  &:focus,
+  &:focus
   &:hover
     color $color--black
     text-decoration underline
 
   &:active
     color $color--black
-
-button
-  cursor pointer
-  font-family inherit
 
 
 //
@@ -143,13 +141,13 @@ code
 
 
 //
-// MISC PRESONTATIONAL ELEMENTS
+// ADDITIONAL PRESONTATIONAL ELEMENTS
 //
 
 address
   font-style normal
 
-abbr
+abbr[title]
   border-bottom 1px dotted
 
 // In HTML5, the `<small>` element represents legal text or small-print, rather
@@ -157,7 +155,7 @@ abbr
 small
   font-size inherit
 
-sub,
+sub
 sup
   position relative
   font-size 0.75em

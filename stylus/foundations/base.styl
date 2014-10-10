@@ -17,7 +17,7 @@
 // Unset margins and padding, the reset for specific elements
 //
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
   display block
   margin 0
   padding 0
@@ -91,6 +91,17 @@ img
   width auto
   height auto
 
+audio, canvas, progress, video
+  display inline-block
+  vertical-align baseline
+
+audio:not([controls])
+  display none
+  height 0
+
+svg:not(:root)
+  overflow hidden
+
 
 //
 // PRE-FORMATTED TEXT / CODE BLOCKS
@@ -105,9 +116,23 @@ pre
 // MISC
 //
 
+button
+  cursor pointer
+  font-family inherit
+
+button::-moz-focus-inner
+  border none
+  padding 0
+
 hr
   display block
   height 1px
   width 100%
   border 0
   background-color $color--grey
+
+// Address `[hidden]` styling not present in IE 8/9.
+// Hide the `template` element in IE, Safari, and Firefox < 22.
+[hidden],
+template
+  display none
