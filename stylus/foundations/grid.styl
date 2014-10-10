@@ -1,7 +1,7 @@
 //
 // GRID
 // ====
-// https://github.com/clocklimited/responsive-grid
+// Reference: https://github.com/clocklimited/responsive-grid
 //
 
 
@@ -16,4 +16,10 @@ grid-base()
 // GRID WIDTHS
 //
 
-grid-widths('', 1 2 3 4)
+grid-widths('', 2)
+
++width-min($mq--tablet)
+  grid-widths('tablet-', 2 3)
+
++width-min($mq--desktop)
+  grid-widths('desktop-', 2 3 4)
