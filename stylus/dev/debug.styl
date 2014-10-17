@@ -66,7 +66,7 @@ debugStyle($message, $outlineWidth, $outlineColor)
 // Images do not accept the content property, so don't pass a message variable.
 img:not([alt])
   debugError()
-img[alt=""]
+img[alt='']
   debugWarning()
 
 
@@ -76,14 +76,14 @@ img[alt=""]
 
 // Check for links with empty, '#', or 'javascript' href attributes.
 // Also check for the obsolete 'name' attribute.
-a[href=""]
+a[href=']
   debugError('Empty href attribute')
-a[href="#"]
+a[href='#']
   debugWarning('# as href attribute')
-a[href*="javascript"]
+a[href*='javascript']
   debugWarning('href contains javascript')
 a[name]
-  debugError('"Name" attribute is obsolete in HTML5')
+  debugError('“Name” attribute is obsolete in HTML5')
 
 // Links shouldn't force new windows / tabs to open. Let the user decide.
 a[target]
@@ -98,7 +98,7 @@ a[target]
 ul,
 ol
   & > *:not(li)
-    debugError('Lists should only contain "li" elements as direct children')
+    debugError('Lists should only contain “li” elements as direct children')
 
 
 //
@@ -107,16 +107,16 @@ ol
 
 // Ensure every table heading has the correct 'scope' attribute.
 th:not([scope])
-  debugNotice('table heading needs a "scope" attribute')
+  debugNotice('table heading needs a “scope” attribute')
 
 // Add thead or tbody elements where needed.
-// Browsers automatically insert missing 'thead' / 'tbody' elements so this test always passes.
+// Browsers automatically insert missing “thead” / “tbody” elements so this test always passes.
 // table > tr
 //   debugNotice('Add a thead or tbody to this table')
 
-// When using a 'tfoot' element, place it before the 'tbody' element.
+// When using a “tfoot” element, place it before the 'tbody' element.
 tbody + tfoot
-  debugNotice('Place the "tfoot" element before the "tbody"')
+  debugNotice('Place the “tfoot” element before the “tbody”')
 
 
 //
@@ -125,23 +125,23 @@ tbody + tfoot
 
 // All forms should have an 'action' attribute, which should not be left blank.
 form:not([action])
-  debugError('All forms require an "action" attributes')
+  debugError('All forms require an “action” attributes')
 form[action='']
-  debugError('The "action" attribute should not be blank')
+  debugError('The “action” attribute should not be blank')
 
 // Input elements should always have 'type' attributes.
 input:not([type])
-  debugError('Inputs should have a "type" attribute')
+  debugError('Inputs should have a “type” attribute')
 
 // Textareas should have 'rows' and 'cols' attributes
 textarea:not([rows])
 textarea:not([cols])
-  debugWarning('Textareas require "cols" and "rows" attributes')
+  debugWarning('Textareas require “cols” and “rows” attributes')
 
 // Submit inputs should always have a 'value' attribute.
 input[type=submit]:not([value])
-input[type=submit][value=""]
-  debugError('Submit button needs a "value" attribute')
+input[type=submit][value='']
+  debugError('Submit button needs a “value” attribute')
 
 
 //
@@ -149,5 +149,5 @@ input[type=submit][value=""]
 //
 
 // Check for variable misuse resulting in undefined classes
-[class*="undefined"]
-  debugAdditional('Class name of "undefined"')
+[class*='undefined']
+  debugAdditional('Class name of “undefined”')
