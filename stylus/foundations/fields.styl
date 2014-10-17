@@ -5,39 +5,35 @@
 // of a form
 //
 
-
+.fieldset,
 .field
-  margin-bottom .5em
+  margin-bottom $base--spacing
+
+.fieldset
+  .field
+    margin-bottom 0
 
 .field__question
-  display block
-  margin-bottom .5em
+  margin-bottom ( $base--spacing / 2 )
 
-.field__answer
-  margin-bottom .5em
+.field__assistance,
+.field__feedback
+  margin-top .5em
 
-.field__answer-list
-  margin-bottom .5em
-
-  li
-    list-style none
-    margin-left 0
-
-.field__text
-  margin-bottom .5em
-
-  p, ul, ol, dl
-    margin-bottom .5em
-
-.field__text--assistance
+.field__assistance
   color #777
   font-size 0.9em
 
-.field__text--feedback
-  //
+.field__feedback
 
-.field__text--feedback--success
-  color $color--success
+  .field--error &
+    color $color--error
 
-.field__text--feedback--error
-  color $color--error
+  .field--success &
+    color $color--success
+
+  .field--notice &
+    color $color--notice
+
+  .field--warning &
+    color $color--warning
