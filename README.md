@@ -8,4 +8,4 @@ Many files still need organising / moving. Useful as a reference for now, but th
 
 ## Dependencies
 
-This repository relies on [Autoprefixer Stylus](https://github.com/jenius/autoprefixer-stylus/), [Stylus Mixins](https://github.com/jackbrewer/stylus-mixins) and [Responsive Grid](https://github.com/clocklimitem/responsive-grid) being available in the project.
+This repository relies on [Autoprefixer Stylus](https://github.com/jenius/autoprefixer-stylus/), [Stylus Mixins](https://github.com/jackbrewer/stylus-mixins) and [Responsive Grid](https://github.com/clocklimited/responsive-grid) being available in the project.
