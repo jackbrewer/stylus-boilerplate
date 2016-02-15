@@ -1,7 +1,7 @@
 //
 // SETTINGS
 // ========
-// Project specific setings which can be changed to modify the basic look and
+// Project specific settings which can be changed to modify the basic look and
 // feel of the project with little effort.
 //
 // 1. BREAKPOINTS AND MEDIA QUERIES
@@ -19,7 +19,7 @@
 // Setup standard widths to pass to media queries
 //
 
-$mq--mobile--portrait  = 0px
+$mq--mobile--portrait  = 300px
 $mq--mobile--landscape = 400px
 $mq--tablet--portrait  = 550px
 $mq--tablet--landscape = 800px
@@ -38,9 +38,9 @@ $mq--desktop = $mq--desktop--small
 //
 
 // Common Project Colours
-$color--blue  = #2b6ede
+$color--blue  = #0095da
 $color--black = #222
-$color--grey  = #777
+$color--grey  = #ccc
 $color--white = #fff
 
 // Brand Colours
@@ -71,15 +71,19 @@ $base--font-body    = $font--georgia
 $base--font-color   = $color--black
 $base--font-size    = 18px
 $base--line-height  = 1.5
-$base--spacing      = ($base--line-height)em
+$base--spacing      = rem(20)
 $base--body-bg      = $color--white
+$base--max-width    = rem(1280)
+
+$content--gutter = $base--spacing
+$content--gutter--mobile = ($base--spacing / 2)
 
 
 //
 // 5. GRID
 //
 
-$grid--gutter = 2em
+$grid--gutter = $base--spacing
 
 
 //
@@ -101,4 +105,4 @@ $debug--level = 'all'
 // Set this variable to anything other than 'development' to manually override.
 //
 
-$environment ?= 'development'
+$environment ?= $ENV || 'development'

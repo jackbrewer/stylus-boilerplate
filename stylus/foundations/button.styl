@@ -10,19 +10,6 @@
 // same as each other, across various browsers.
 //
 
-.btn
-  display inline-bloc//
-// BUTTONS
-// =======
-//
-
-
-//
-// BASE STYLES
-// Base styles to persuade `<a>`, `<button>` and `<input>` elements to look the
-// same as each other, across various browsers.
-//
-
 .button
   display inline-block
   border 0
@@ -31,29 +18,22 @@
   overflow visible // removes padding in IE
 
   // Presentational Styles
-  padding em(15) 1em
-  line-height 1
-  font-size rem(18)
+  padding 0.5em 1em
+  line-height 1.2
+  font-size 1em
   font-family inherit
-  font-weight bold
-  color $color--white !important // Forces this color regardless of link styles
-  background-color $color--pink
+  color inherit
+  background-color $color--grey
   text-align center
-  border-radius 5px
-  width 100%
-  +width-min($mq--tablet)
-    max-width em(335)
-  +width-min($mq--desktop)
-    max-width em(295)
 
   &:focus
   &:hover
     text-decoration none
-    background-color lighten($color--pink, 10%)
+    background-color lighten($color--grey, 10%)
     outline 0
 
   &:active
-    background-color darken($color--pink, 20%)
+    background-color darken($color--grey, 20%)
 
 
 //
@@ -63,22 +43,16 @@
 
 .button--primary
   color $color--white
-  background-color $color--secondary
+  background-color $color--primary
 
   &:focus
   &:hover
     color $color--white
-    background-color lighten($color--secondary, 10%)
+    background-color lighten($color--primary, 10%)
 
   &:active
-    background-color darken($color--secondary, 20%)
+    background-color darken($color--primary, 20%)
 
-.button--full-width
-  width 100%
-  max-width 100% !important
-
-.button--large
-  padding rem(15) 0
 
 //
 // DISABLED BUTTON
@@ -125,104 +99,3 @@
   cursor pointer
   font-family inherit
   font-size inherit
-
-
-//
-// MOBILE NAV BUTTON
-// Hamburger menu
-//
-
-.button--open-nav
-  background transparent
-  padding 0
-
-  span
-    display block
-    height 2px
-    width 70px
-    margin 10px 0
-    background-color $color--white
-
-  &:hover
-  &:active
-  &:focus
-    background transparent
-k
-  border none
-  vertical-align middle
-  cursor pointer
-  overflow visible // removes padding in IE
-
-  // Presentational Styles
-  height 3em
-  padding 0 1em
-  line-height @height
-  font-size 1em
-  font-family inherit
-  color inherit
-  background-color $color--grey
-
-  &:focus
-  &:hover
-    text-decoration none
-    background-color lighten($color--grey, 10%)
-
-  &:active
-    background-color darken($color--grey, 20%)
-
-  &:focus
-    outline 0
-
-//
-// BUTTON MODIFIERS
-// Remember to add button variation modifier examples to the style guide page.
-//
-
-.btn--primary
-  color $color--white
-  background-color $color--primary
-
-  &:focus
-  &:hover
-    color $color--white
-    background-color lighten($color--primary, 10%)
-
-  &:active
-    background-color darken($color--primary, 20%)
-
-//
-// BUTTON GROUP
-// Contains multiple buttons and adds spacing between them.
-//
-
-.btn--block
-  display block
-  width 100%
-
-
-//
-// BUTTON GROUP
-// Contains multiple buttons and adds spacing between them.
-//
-
-.btn-group
-  .btn + .btn
-    margin-left 0.5em
-
-
-//
-// UNSTYLED BUTTON
-// Simple reset to make button elements look more like text links.
-//
-
-.text-btn
-  padding 0
-  margin 0
-  border none
-  background none
-  cursor pointer
-  font inherit
-  @extend a
-
-  &:focus
-    outline none

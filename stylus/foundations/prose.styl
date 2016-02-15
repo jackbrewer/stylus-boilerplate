@@ -7,34 +7,30 @@
 
 
 .prose
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
-    margin-bottom $base--spacing
 
-  h1, .h1
-    font-size rem(38)
-    +width-min($mq--tablet)
-      font-size rem(48)
-  h2, .h2
-    font-size rem(30)
-  h3, .h3
-    font-size rem(23)
-  h4, .h4
+  h1, h2, h3, h4, h5, h6
+    font-family $base--font-heading
+    font-weight bold
+    line-height 1
+    color $color--black
+
+  h1
+    font-size 2.375em
+  h2
+    font-size 1.6em
+  h3
+    font-size 1.4em
+  h4
     font-size 1.2em
-  h5, .h5
+  h5
     font-size 1.1em
-  h6, .h6
+  h6
     font-size 1em
 
   // Stop text extending beyond a reasonable line-length
-  li
+  p, li
     max-width rem(900)
 
   // Stop lists next to floated elements losing their bullets/numbers.
   ul, ol
     display table
-
-  a
-    text-decoration underline
-    &:hover
-    &:focus
-      color $color--pink

@@ -31,9 +31,6 @@ $vhidden =
 $hidden =
   display none !important
 
-$shown =
-  display block !important
-
 .is-hidden
   {$hidden}
 
@@ -45,46 +42,10 @@ $shown =
   .is-hidden-tablet
     {$hidden}
 
-+width-range($mq--tablet, $mq--tablet--landscape - 1)
-  .is-hidden-tablet--portrait
-    {$hidden}
-
-+width-range($mq--tablet--landscape, $mq--desktop - 1)
-  .is-hidden-tablet--landscape
-    {$hidden}
-
-+width-min($mq--tablet)
-  .is-hidden-tablet-up
-    {$hidden}
-
 +width-min($mq--desktop)
   .is-hidden-desktop
     {$hidden}
 
-// Widget visibility options
-$shown =
-  display block !important
-
-.visible--mobile
-.visible--tablet
-.visible--desktop
-  {$hidden}
-
-+width-max($mq--tablet - 1)
-  .visible--mobile
-    {$shown}
-
-+width-range($mq--tablet, $mq--desktop - 1)
-  .visible--tablet
-    {$shown}
-
-+width-range($mq--tablet--landscape, $mq--desktop - 1)
-  .visible--tablet-landscape
-    {$shown}
-
-+width-min($mq--desktop)
-  .visible--desktop
-    {$shown}
 
 //
 // JS VISIBILITY

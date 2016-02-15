@@ -8,24 +8,16 @@
 $control--text
   display block
   width 100%
-  padding rem(10) rem(15)
-  border 1px solid $color--blue-grey
-  height $base--line-height + rem(20)
-  +ie(8)
-    height auto
-    line-height $base--line-height + rem(20)
+  padding 0.25em 0.5em
+  border 1px solid $color--grey
+  line-height $base--line-height
   font-family inherit
   font-size inherit
-  background-color transparent
-  border-radius 3px
-  color inherit
+  background-color $color--white
+  border-radius 0
   &:focus
+    border-color $color--primary
     outline 0
-    color $color--black
-    border-color $color--black
-
-  &::placeholder
-    color $color--blue--extra-light
 
 .control--text
   @extend $control--text
@@ -33,6 +25,7 @@ $control--text
 
 .control--choice
   @extend $control--text
+  height $base--line-height + 0.5em // match the line-height and vertical padding of $control--text
 
 .control--multilined
   resize vertical

@@ -6,14 +6,29 @@
 
 .list--unstyled
   margin-bottom 0
+
   > li
     list-style none
     margin-left 0
-    padding-left 0
-    &:before
-    &:after
-      content none
+
 
 .list--inline
+
   > li
     display inline-block
+    margin-left 0
+
+
+.list--comma
+
+  > li
+    display inline-block
+    margin-left 3px
+
+    &:after
+      content ', '
+
+    &:last-child
+      margin-right 0
+      &:after
+        content none

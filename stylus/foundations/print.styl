@@ -1,71 +1,61 @@
 //
-// NOTIFICATIONS
-// =============
+// PRINT STYLES
+// ============
+// Based on HTML5 Boilerplate's default print styles.
 //
 
 
-//
-// Notification
-//
+@media print
 
-.notification
-  margin-left 0
-  list-style none
-  padding .75em
-  margin-bottom $base--spacing
-  background lighten($color--grey, 70%)
+  //@stylint off
+  @page
+    margin 0.5cm
+  //@stylint on
 
-.notification--large
-  padding 1.5em
-  p, ul, ol, dl
-    margin-top ($base--spacing/2)
+  //@stylint off
+  *
+    background transparent !important
+    color #000 !important // Black prints faster – h5bp.com/s
+    box-shadow none !important
+    text-shadow none !important
+  //@stylint on
 
-.notification--info
-  border-left-color $color--notice
-  background lighten($color--notice, 70%)
+  a,
+  a:visited
+    text-decoration underline
 
-.notification--warning
-  border-left-color $color--warning
-  background lighten($color--warning, 70%)
+  a[href]:after
+    content ' (' attr(href) ')'
 
-.notification--error
-  border-left-color $color--error
-  background lighten($color--error, 70%)
+  abbr[title]:after
+    content ' (' attr(title) ')'
 
-.notification--success
-  border-left-color $color--success
-  background lighten($color--success, 70%)
+  // Don't show links for images, or javascript/internal links
+  a[href^='javascript:']:after,
+  a[href^='#']:after
+    content ''
 
+  pre,
+  blockquote
+    border 1px solid $color--grey
+    page-break-inside avoid
 
-//
-// Notification Content
-//
+  thead
+    display table-header-group // h5bp.com/t
 
-.notification__title
-  margin-bottom 0
-  font-weight normal
-  font-size 1.2em
+  tr,
+  img
+    page-break-inside avoid
 
-.notification
-  p, ul, ol, dl
-    margin-bottom 0
-    margin-top ($base--spacing/4)
+  img
+    max-width 100% !important
 
-  p:first-child,
-  ul:first-child,
-  ol:first-child,
-  dl:first-child
-    margin-top 0
+  p,
+  h2,
+  h3
+    orphans 3
+    widows 3
 
-
-//
-// Notification List
-//
-
-.notification-list
-  .notification
-    margin-bottom 5px
-
-.notification-list--collapsed
-  .notification
-    margin-bottom 0
+  h2,
+  h3
+    page-break-after avoid
