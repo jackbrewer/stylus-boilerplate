@@ -9,8 +9,11 @@
 //
 
 
+//@stylint off
 *, *:before, *:after
   box-sizing border-box
+//@stylint on
+
 
 //
 // SPACING
@@ -40,6 +43,9 @@ p, pre, ul, ol, dl, hr, legend, address, table, blockquote
 
 body
   background-color $base--body-bg
+  min-width $mq--mobile--portrait
+  +ie(8)
+    min-width $mq--desktop--small
 
 
 //
@@ -51,7 +57,7 @@ li
   list-style-position outside
   margin-left 2em
 
-  ol, ul
+  ul, ol
     margin-bottom 0
 
   ul &
@@ -68,8 +74,10 @@ li
 
 // Unstyle navigation lists
 nav
+
   ul, ol
     margin-bottom 0
+
   li
     list-style none
     margin-left 0
@@ -79,11 +87,9 @@ nav
 // MEDIA
 //
 
-img
-  border 0
-
 img, object
   vertical-align bottom
+  border 0
 
 // Responsive images
 img
@@ -110,7 +116,26 @@ svg:not(:root)
 pre
   code
     display block
+    overflow-x auto
+    -webkit-overflow-scrolling touch
 
+
+//
+// FORMS
+//
+
+label
+  display block
+
+input[type='submit']
+input[type='reset']
+input[type='search']::-webkit-search-decoration
+  -webkit-appearance none // http://stackoverflow.com/questions/11127891
+
+// Stop Firefox making input(type='submit') taller than regular buttons
+input::-moz-focus-inner
+  border 0
+  padding 0
 
 //
 // MISC
@@ -119,9 +144,10 @@ pre
 button
   cursor pointer
   font-family inherit
+  border-radius 0
 
 button::-moz-focus-inner
-  border none
+  border 0
   padding 0
 
 hr
@@ -130,9 +156,3 @@ hr
   width 100%
   border 0
   background-color $color--grey
-
-// Address `[hidden]` styling not present in IE 8/9.
-// Hide the `template` element in IE, Safari, and Firefox < 22.
-[hidden],
-template
-  display none

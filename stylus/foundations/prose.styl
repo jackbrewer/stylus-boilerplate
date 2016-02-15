@@ -1,0 +1,40 @@
+//
+// PROSE
+// =====
+// Used for any 'generic' text, such as article content or service page copy.
+// Should be applied to output of any CMS content where a WYSIWYG is in place.
+//
+
+
+.prose
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+    margin-bottom $base--spacing
+
+  h1, .h1
+    font-size rem(38)
+    +width-min($mq--tablet)
+      font-size rem(48)
+  h2, .h2
+    font-size rem(30)
+  h3, .h3
+    font-size rem(23)
+  h4, .h4
+    font-size 1.2em
+  h5, .h5
+    font-size 1.1em
+  h6, .h6
+    font-size 1em
+
+  // Stop text extending beyond a reasonable line-length
+  li
+    max-width rem(900)
+
+  // Stop lists next to floated elements losing their bullets/numbers.
+  ul, ol
+    display table
+
+  a
+    text-decoration underline
+    &:hover
+    &:focus
+      color $color--pink

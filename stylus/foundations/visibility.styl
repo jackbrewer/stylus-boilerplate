@@ -4,22 +4,97 @@
 //
 
 
-// REMOVE FROM DOCUMENT
-// Only use if content has no SEO / Accessibility value
+//
+// VISUALLY HIDDEN
+// Still accessible to screen-readers/bots
+//
 
-.hidden
+$vhidden =
+  position absolute !important
+  clip rect(0, 0, 0, 0) !important
+  overflow hidden !important
+  height 1px !important
+  width 1px !important
+  padding 0 !important
+  margin -1px !important
+  border 0 !important
+
+.is-vhidden
+  {$vhidden}
+
+
+//
+// REMOVED FROM DOCUMENT
+// Only use if content has no SEO / Accessibility value
+//
+
+$hidden =
   display none !important
 
+$shown =
+  display block !important
 
-// VISUALLY HIDE
-// Still accessible to screen-readers/bots
+.is-hidden
+  {$hidden}
 
-.vhidden
-  position absolute
-  clip rect(1px, 1px, 1px, 1px)
-  overflow hidden
-  height 1px
-  width 1px
-  padding 0
-  margin 0
-  border 0
++width-max($mq--tablet - 1)
+  .is-hidden-mobile
+    {$hidden}
+
++width-range($mq--tablet, $mq--desktop - 1)
+  .is-hidden-tablet
+    {$hidden}
+
++width-range($mq--tablet, $mq--tablet--landscape - 1)
+  .is-hidden-tablet--portrait
+    {$hidden}
+
++width-range($mq--tablet--landscape, $mq--desktop - 1)
+  .is-hidden-tablet--landscape
+    {$hidden}
+
++width-min($mq--tablet)
+  .is-hidden-tablet-up
+    {$hidden}
+
++width-min($mq--desktop)
+  .is-hidden-desktop
+    {$hidden}
+
+// Widget visibility options
+$shown =
+  display block !important
+
+.visible--mobile
+.visible--tablet
+.visible--desktop
+  {$hidden}
+
++width-max($mq--tablet - 1)
+  .visible--mobile
+    {$shown}
+
++width-range($mq--tablet, $mq--desktop - 1)
+  .visible--tablet
+    {$shown}
+
++width-range($mq--tablet--landscape, $mq--desktop - 1)
+  .visible--tablet-landscape
+    {$shown}
+
++width-min($mq--desktop)
+  .visible--desktop
+    {$shown}
+
+//
+// JS VISIBILITY
+// show/hide classes depending on if JS is enabled
+//
+
+.is-visible--no-js
+  .js &
+    {$hidden}
+
+.is-visible--js
+  .no-js &
+    {$hidden}

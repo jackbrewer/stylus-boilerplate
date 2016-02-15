@@ -8,23 +8,31 @@
 $control--text
   display block
   width 100%
-  padding 0.25em 0.5em
-  border 1px solid $color--grey
-  line-height $base--line-height
+  padding rem(10) rem(15)
+  border 1px solid $color--blue-grey
+  height $base--line-height + rem(20)
+  +ie(8)
+    height auto
+    line-height $base--line-height + rem(20)
   font-family inherit
-  font-size inherit // this exists in the typography stylesheet
-  background-color $color--white
+  font-size inherit
+  background-color transparent
+  border-radius 3px
+  color inherit
   &:focus
-    border-color $color--primary
     outline 0
+    color $color--black
+    border-color $color--black
+
+  &::placeholder
+    color $color--blue--extra-light
 
 .control--text
-  @extends $control--text
+  @extend $control--text
   -webkit-appearance none
 
 .control--choice
-  @extends $control--text
-  height $base--line-height + 0.5em // match the line-height and vertical padding of $control--text
+  @extend $control--text
 
 .control--multilined
   resize vertical
@@ -32,12 +40,17 @@ $control--text
 
 .control--boolean
   margin-right 10px
+  line-height inherit
+  vertical-align middle
+
+  & + span
+    vertical-align middle
 
   span + &
     margin-right 0
     margin-left 10px
 
-.control--field
+.control--file
   line-height 1
-  font-family inherit
   font-size inherit
+  font-family inherit

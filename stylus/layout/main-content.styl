@@ -1,10 +1,17 @@
-// NEEDS REVIEW
-// * Formalise default elements/styles for this file
-
 //
 // MAIN CONTENT
 // ============
 //
 
+
 .main-content
-  //
+  background-color $color--white
+  padding-top rem(20)
+  color $color--blue
+
+  +width-min($mq--desktop)
+    min-height rem(400)
+
+  // Bump content up on homepage
+  .page--home &
+    padding-top 0

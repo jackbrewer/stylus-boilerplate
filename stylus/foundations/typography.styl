@@ -12,10 +12,6 @@
 // SELECTED TEXT
 //
 
-::-moz-selection
-  color $color--white
-  background $color--primary
-  text-shadow none
 ::selection
   color $color--white
   background $color--primary
@@ -41,36 +37,25 @@ body
 
 //
 // HEADINGS
-// Uses a Double-stranded heading hierarchy to preserve the document outline.
-// http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+// Headings are intentionally styled to look like standard body copy
 //
 
-h1, h2, h3, h4, h5, h6
-.h1, .h2, .h3, .h4, .h5, .h6
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   font-family $base--font-heading
-  font-weight bold
-  line-height 1
-  color $color--black
+  font-weight 300
+  line-height inherit
+  color $color--blue
+  letter-spacing tracking(75)
 
-h1, .h1
-  font-size 2.375em
-h2, .h2
-  font-size 1.6em
-h3, .h3
-  font-size 1.4em
-h4, .h4
-  font-size 1.2em
-h5, .h5
-  font-size 1.1em
-h6, .h6
-  font-size 1em
-
+h1, .h1, h2, .h2
+  text-transform uppercase
 
 //
 // LINKS & BUTTONS
 //
 
-a
+// Set default link styles as a variable to allow `@extend` from `button.styl`
+$default-link
   color $color--primary
   text-decoration none
 
@@ -78,9 +63,13 @@ a
   &:hover
     color $color--black
     text-decoration underline
+    outline 0
 
   &:active
     color $color--black
+
+a
+  @extend $default-link
 
 
 //
@@ -102,9 +91,9 @@ blockquote p:before, blockquote p:after, q:before, q:after
   content ''
 
 blockquote
-  font-size 1.125em
 
   p
+    font-size 1.5em
     margin-bottom 0
 
 
@@ -118,9 +107,6 @@ ins
 
 del, s
   text-decoration line-through
-
-u
-  text-decoration underline
 
 mark
   background-color lighten($color--notice, 40%)
@@ -137,7 +123,10 @@ mark
 
 pre
 code
+samp
+kbd
   font-family 'Monaco', monospace
+  font-size 0.9em
 
 
 //
@@ -149,14 +138,14 @@ address
 
 abbr[title]
   border-bottom 1px dotted
+  text-decoration none
 
 // In HTML5, the `<small>` element represents legal text or small-print, rather
 // than dictating a font size.
 small
   font-size inherit
 
-sub
-sup
+sub, sup
   position relative
   font-size 0.75em
   line-height 0
@@ -167,3 +156,100 @@ sup
 
 sub
   bottom -0.25em
+
+.text-center
+  text-align center
+
+
+//
+// CONTENT SPECIFIC TYPE STYLES
+//
+
+.heading
+  font-family $base--font-heading
+  font-size rem(36)
+  font-weight 300
+  letter-spacing tracking(75)
+  text-transform uppercase
+  line-height rem(54)
+  color inherit
+  +width-min($mq--tablet)
+    font-size rem(48)
+
+.sub-heading
+  font-family $base--font-heading
+  font-size rem(24)
+  font-weight bold
+  letter-spacing tracking(75)
+  text-transform uppercase
+  margin-bottom rem(25)
+  color inherit
+
+  a:hover &
+    text-decoration underline
+
+.title
+  font-family $base--font-heading
+  font-size rem(23)
+  font-weight 300
+  letter-spacing tracking(75)
+  text-transform uppercase
+  color inherit
+
+.sub-title
+  font-family $base--font-heading
+  font-size rem(23)
+  font-weight 300
+  letter-spacing tracking(75)
+  color inherit
+
+.standfirst
+  font-family $base--font-heading
+  font-size rem(20)
+  font-weight 300
+  letter-spacing tracking(75)
+  color inherit
+
+  +width-min($mq--desktop)
+    font-size rem(24)
+
+.date
+  display block
+  font-family $base--font-body
+  font-size rem(14)
+  font-weight 300
+  margin-bottom rem(5)
+  color inherit
+
+.copy
+  font-size rem(17)
+
+/* Modifiers */
+
+.heading--home
+  font-size rem(36)
+  font-weight 300
+  letter-spacing tracking(35)
+  +width-min($mq--tablet)
+    font-size rem(48)
+
+  +width-min($mq--desktop)
+    font-size rem(60)
+    line-height rem(70)
+    margin-bottom rem(50)
+
+  a
+    color $color--white
+    &:hover
+    &:focus
+      text-decoration none
+      color $color--blue--extra-light
+
+.copy--light
+  font-weight 300
+
+.title--small
+  font-size rem(17)
+  font-weight 300
+  letter-spacing tracking(25)
+  color inherit

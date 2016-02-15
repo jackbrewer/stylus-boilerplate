@@ -5,26 +5,21 @@
 // of a form
 //
 
-.fieldset,
-.field
-  margin-bottom $base--spacing
 
-.fieldset
-  .field
-    margin-bottom 0
+.field
+  margin-bottom rem(20)
 
 .field__question
-  margin-bottom ( $base--spacing / 2 )
-
-.field__assistance,
-.field__feedback
-  margin-top .5em
+  margin-bottom ($base--spacing / 2)
 
 .field__assistance
-  color #777
+  margin-top ($base--spacing / 2)
+  color $color--grey
   font-size 0.9em
 
 .field__feedback
+  margin-top 0
+  margin-left rem($base--spacing / 2)
 
   .field--error &
     color $color--error
@@ -37,3 +32,10 @@
 
   .field--warning &
     color $color--warning
+
+.field--error .control--text
+  border-color $color--error
+  color $color--white
+
+  &:focus
+    color $color--white

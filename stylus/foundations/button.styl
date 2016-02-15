@@ -11,7 +11,143 @@
 //
 
 .btn
+  display inline-bloc//
+// BUTTONS
+// =======
+//
+
+
+//
+// BASE STYLES
+// Base styles to persuade `<a>`, `<button>` and `<input>` elements to look the
+// same as each other, across various browsers.
+//
+
+.button
   display inline-block
+  border 0
+  vertical-align middle
+  cursor pointer
+  overflow visible // removes padding in IE
+
+  // Presentational Styles
+  padding em(15) 1em
+  line-height 1
+  font-size rem(18)
+  font-family inherit
+  font-weight bold
+  color $color--white !important // Forces this color regardless of link styles
+  background-color $color--pink
+  text-align center
+  border-radius 5px
+  width 100%
+  +width-min($mq--tablet)
+    max-width em(335)
+  +width-min($mq--desktop)
+    max-width em(295)
+
+  &:focus
+  &:hover
+    text-decoration none
+    background-color lighten($color--pink, 10%)
+    outline 0
+
+  &:active
+    background-color darken($color--pink, 20%)
+
+
+//
+// BUTTON MODIFIERS
+// Remember to add button variation modifier examples to the style guide page.
+//
+
+.button--primary
+  color $color--white
+  background-color $color--secondary
+
+  &:focus
+  &:hover
+    color $color--white
+    background-color lighten($color--secondary, 10%)
+
+  &:active
+    background-color darken($color--secondary, 20%)
+
+.button--full-width
+  width 100%
+  max-width 100% !important
+
+.button--large
+  padding rem(15) 0
+
+//
+// DISABLED BUTTON
+//
+
+.button[disabled]
+.button.is-disabled
+  opacity 0.75
+  user-select none
+  pointer-events none
+
+
+//
+// BUTTON GROUP
+// Contains multiple buttons and adds spacing between them.
+//
+
+.button--block
+  display block
+  width 100%
+
+
+//
+// BUTTON GROUP
+// Contains multiple buttons and adds spacing between them.
+//
+
+.button-group
+  .button + .button
+    margin-left 0.5em
+
+
+//
+// UNSTYLED BUTTON
+// Simple reset to make button elements look more like text links.
+//
+
+.text-btn
+  @extend $default-link
+  padding 0
+  margin 0
+  border 0
+  background none
+  cursor pointer
+  font-family inherit
+  font-size inherit
+
+
+//
+// MOBILE NAV BUTTON
+// Hamburger menu
+//
+
+.button--open-nav
+  background transparent
+  padding 0
+
+  span
+    display block
+    height 2px
+    width 70px
+    margin 10px 0
+    background-color $color--white
+
+  &:hover
+  &:active
+  &:focus
+    background transparent
+k
   border none
   vertical-align middle
   cursor pointer
