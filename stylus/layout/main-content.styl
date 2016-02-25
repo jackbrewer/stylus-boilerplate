@@ -5,13 +5,14 @@
 
 
 .main-content
-  background-color $color--white
-  padding-top rem(20)
-  color $color--blue
+  padding-top $base--spacing
+  padding-bottom $base--spacing
+
+  +width-min($mq--tablet)
+    padding-top $base--spacing * 2
+    padding-bottom $base--spacing * 2
 
   +width-min($mq--desktop)
     min-height rem(400)
-
-  // Bump content up on homepage
-  .page--home &
-    padding-top 0
+    padding-top $base--spacing * 3
+    padding-bottom $base--spacing * 3

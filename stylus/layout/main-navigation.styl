@@ -1,15 +1,21 @@
-// NEEDS REVIEW
-// * Formalise default elements/styles for this file
-
 //
 // MAIN NAVIGATION
 // ===============
 //
 
+
 .main-navigation
-  background-color $color--grey
-  margin-bottom 1.5em
+  border-bottom 1px solid $color--grey
 
   li
     display inline-block
-    padding 0.5em 1em
+
+    a
+      display inline-block
+      padding 0.5em 1em
+
+      &:hover
+      &:focus
+      &:active
+        color $color--white
+        background-color $color--primary
