@@ -1,25 +1,26 @@
 //
 // ACCESSIBILITY
 // =============
-// Affects content added to aid accessibilit, such as “skip links”
+// Affects content added to aid accessibility, such as “skip links”
 //
+
 
 .a11y-navigation
 
   a
     position absolute
+    top -200px
     clip rect(1px, 1px, 1px, 1px)
     overflow hidden
-    height 1px
+    height 0
     background-color $color--black
     color $color--white
     z-index 1000
-    outline 0
     padding 2px 6px
 
     &:focus
       clip auto
+      top 0
       overflow visible
       height auto
-
-
+      outline 0

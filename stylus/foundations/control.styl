@@ -12,18 +12,19 @@ $control--text
   border 1px solid $color--grey
   line-height $base--line-height
   font-family inherit
-  font-size inherit // this exists in the typography stylesheet
+  font-size inherit
   background-color $color--white
+  border-radius 0
   &:focus
     border-color $color--primary
     outline 0
 
 .control--text
-  @extends $control--text
+  @extend $control--text
   -webkit-appearance none
 
 .control--choice
-  @extends $control--text
+  @extend $control--text
   height $base--line-height + 0.5em // match the line-height and vertical padding of $control--text
 
 .control--multilined
@@ -32,12 +33,17 @@ $control--text
 
 .control--boolean
   margin-right 10px
+  line-height inherit
+  vertical-align middle
+
+  & + span
+    vertical-align middle
 
   span + &
     margin-right 0
     margin-left 10px
 
-.control--field
+.control--file
   line-height 1
-  font-family inherit
   font-size inherit
+  font-family inherit

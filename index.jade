@@ -1,0 +1,420 @@
+doctype
+html.no-js(lang='en')
+  head
+    //-
+    //- STANDARD META TAGS
+    //-
+
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1')
+
+    //-
+    //- CSS
+    //- Conditional comments to load a completely separate file for IE8
+    //-
+
+    <!--[if gt IE 8]><!-->
+    link(rel='stylesheet', href='public/styles/main.css')
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+    link(rel='stylesheet', href='/assets/css/index-ie8.css')
+    <![endif]-->
+
+
+    //-
+    //- ICONS / IMAGES / DEVICE SPECIFICS
+    //-
+
+    link(rel='shortcut icon', href='/assets/img/meta/favicon.ico')
+
+
+  body(class=bodyClass || null)
+
+    block body-start
+
+    block a11y-navigation
+
+    block main-header
+
+      block content-header
+
+    block content-wrapper
+      main.main-content(id='content', role='main')
+        block content
+
+    block main-footer
+
+    block body-end
+
+    block scripts
+      script(src='/assets/js/build/index.js'), async, defer)
+      if enableBrowserSync
+        script#__bs_script__.
+          document.write('<script async src="//HOST:PORT/browser-sync/browser-sync-client.js"><\/script>'.replace(/HOST/g, location.hostname).replace(/PORT/g, #{config.browserSyncPort}))
+
+h1 Prose Typography
+p Prose text generally appears on article pages or service pages. Any text that a User enters in a CMS will be styled this way.
+
+hr
+
+.prose
+
+h1 Heading 1 as text
+p Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis.
+p Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.
+
+h2 Heading 2 as text
+p Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+
+h3 Heading 3 as text
+p Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat.
+
+h4 Heading 4 as text
+p Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat.
+
+h5 Heading 5 as text
+p Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat.
+
+h6 Heading 6 as text
+p Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat.
+
+hr
+
+h1 Heading 1 as text
+h2 Heading 2 as text
+h3 Heading 3 as text
+h4 Heading 4 as text
+h5 Heading 5 as text
+h6 Heading 6 as text
+
+hr
+
+h1: a(href='#') Heading 1 as a link
+h2: a(href='#') Heading 2 as a link
+h3: a(href='#') Heading 3 as a link
+h4: a(href='#') Heading 4 as a link
+h5: a(href='#') Heading 5 as a link
+h6: a(href='#') Heading 6 as a link
+
+hr
+
+ol
+  li Ordered list item 1
+  li Ordered list item 2
+    ol
+      li Nested ordered list item 1
+      li Nested ordered list item 2
+      li Nested ordered list item 3
+  li Ordered list item 3
+  li Ordered list item 4. ut in nulla enim. phasellus molestie magna non est bibendum non venenatis nisl tempor. suspendisse dictum feugiat nisl ut dapibus. mauris iaculis porttitor posuere. praesent id metus massa, ut blandit odio. proin quis tortor orci. etiam at risus et justo dignissim congue. donec congue lacinia dui.
+  li Ordered list item 5
+
+ul
+  li Unordered list item 1
+  li Unordered list item 2
+    ul
+      li Nested unordered list item 1
+      li Nested unordered list item 2
+      li Nested unordered list item 3
+  li Unordered list item 3
+  li Unordered list item 4. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui.
+  li Unordered list item 5
+
+dl
+  dt Definition Title
+  dd Definition Description
+  dt Definition Title
+  dt Definition Title
+  dd Definition Description
+  dt Definition Title
+  dd Definition Description
+  dd Definition Description
+
+hr
+
+h2 Lists
+
+ul.list--unstyled
+  li Unstyled list item 1
+  li Unstyled list item 2
+  li Unstyled list item 3
+
+ul.list--inline
+  li Inline list item 1
+  li Inline list item 2
+  li Inline list item 3
+
+ul.list--comma
+  li Comma list item 1
+  li Comma list item 2
+  li Comma list item 3
+
+hr
+
+p #[a(href='#') This is a text link]
+
+p #[strong Strong is used to indicate strong importance]
+
+p #[em This text has added emphasis]
+
+p The #[b b element] is stylistically different text from normal text, without any special importance
+
+p The #[i i element] is text that is set off from the normal text
+
+p #[del This text is deleted] and #[ins This text is inserted]
+
+p #[s This text has a strikethrough]
+
+p Superscript#[sup ®]
+
+p Subscript for things like H#[sub 2]O
+
+p #[small This “small” text is for fine print, etc.]
+
+p Abbreviation: #[abbr(title='HyperText Markup Language') HTML]
+
+p Keybord input: #[kbd Cmd]
+
+p #[q(cite='https://developer.mozilla.org/en-US/docs/HTML/Element/q')] This text is a short inline quotation
+
+p #[cite This is a citation]
+
+p The #[dfn dfn element] indicates a definition
+
+p The #[mark mark element] indicates a highlight
+
+p #[code This is what inline code looks like]
+
+p #[samp This is sample output from a computer program]
+
+p The #[var variarble element] , such as #[var x] = #[var y]
+
+hr
+
+pre
+  | A B C D E F G H I J K L M
+  | N O P Q R S T U V W X Y Z
+  | a b c d e f g h i l k l m
+  | n o p q r s t u v w x y z
+  | 1 2 3 4 5 6 7 8 9 0 # ? !
+  | @ £ $ % ^ & * ( ) ; ' " /
+
+pre
+  code
+    | &lt;!DOCTYPE html&gt;
+    | &lt;html&gt;
+    |   &lt;head&gt;
+    |   &lt;/head&gt;
+    |   &lt;body&gt;
+    |       &lt;h1 class="site-title"&gt;Site Title&lt;div&gt;
+    |   &lt;/body&gt;
+    | &lt;/html&gt;
+
+
+h1 Buttons
+
+p
+a.button(href='#') Anchor Tag
+|  
+button.button(type='button') Button Element
+|  
+input.button(type='submit', value='Form Input')
+p
+a.button(href='#') Anchor Tag #[br]with multi-line
+|  
+button.button(type='button') Button Element #[br]with multi-line
+p
+a.button.button--primary(href='#') Anchor Tag
+|  
+button.button.button--primary(type='button') Button Element
+|  
+input.button.button--primary(type='submit', value='Form Input')
+
+h3 Block Buttons
+p
+a.button.button--block.is-disabled(href='#') Anchor Tag
+|  
+a.button.button--block.button--primary.is-disabled(href='#') Anchor Tag
+
+h3 Disabled Buttons
+p
+a.button.is-disabled(href='#') Disabled using class
+|  
+a.button.button--primary.is-disabled(href='#') Disabled using class
+|  
+button.button(type='button', disabled) Disabled using attribute
+|  
+button.button.button--primary(type='button', disabled) Disabled using attribute
+
+h3 Text Buttons
+p
+a.text-btn(href='#') Anchor Tag as Text
+|  &nbsp; 
+button.text-btn(type='button') Button Element as Text
+|  &nbsp; 
+input.text-btn(type='submit', value='Form Input as Text')
+
+
+h1 Form Elements
+p Sample form fields in various combinations.
+
+h2 Standard Input Templates
+p A single question, with a single answer – text input, select, or textarea.
+
+.field(id='field--headline')
+.field__question
+  label(for='control--headline') Add a headline
+    |  
+    abbr(title='This field is required') *
+.field__answer
+  input.control.control--text(type='text', name='headline', id='control--headline')
+.field__assistance Keep it short and memorable
+
+.field(id='field--title')
+.field__question
+  label(for='control--title') Title
+.field__answer
+  select.control.control--choice(name='title', id='control--title')
+    option(value='') -- Please Choose --
+    - for val in ['Mr', 'Mrs', 'Miss', 'Ms', 'Dr', 'Prof' ]
+      option(value=val)= val
+
+.field(id='field--fruit')
+.field__question
+  label(for='control--fruit') Choose your favourite fruit
+.field__answer
+  select.control.control--choice.control--multilined(name='fruit', id='control--fruit', multiple, size='5')
+    - for val, i in ['Orange', 'Banana', 'Apple', 'Grape', 'Melon', 'Pear' ]
+      option(value=i)= val
+.field__assistance You can select multiple answers
+
+.field(id='field--message')
+.field__question
+  label(for='control--message') Add a message
+.field__answer
+  textarea.control.control--text.control--multilined(name='message', id='control--message', rows='6')
+
+.field(id='field--image')
+.field__question
+  label(for='control--image') Upload an Image
+.field__answer
+  input.control.control--file(type='file', name='image', id='control--image')
+
+hr
+
+h2 Multi-Input Templates
+p One question, with multiple parts to the answer – text inputs, selects, or textareas, in any combination. Uses the 
+a(href='https://github.com/clocklimited/responsive-grid') Responsive Grid
+| .
+
+.field(id='field--full-name')
+.field__question What is your name?
+.field__answer
+  .grid
+    .grid__item.tablet-one-half
+      label
+        span First Name
+        input.control.control--text(type='text', name='firstname')
+    .grid__item.tablet-one-half
+      label
+        span Last Name
+        input.control.control--text(type='text', name='lastname')
+
+.field(id='field--dob')
+.field__question Date of Birth
+.field__answer
+  .grid
+    .grid__item.tablet-one-third
+      label
+        span.is-vhidden Choose a Day
+        select.control.control--choice(name='dob-day', id='control--dob-day')
+          - for (var i = 1; i <= 31; ++i)
+            option(value=i)= i
+    .grid__item.tablet-one-third
+      label
+        span.is-vhidden Choose a Month
+        select.control.control--choice(name='dob-month', id='control--dob-month')
+          - for month, i in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+            option(value=i + 1)= month
+    .grid__item.tablet-one-third
+      label
+        span.is-vhidden Choose a Year
+        select.control.control--choice(name='dob-year', id='control--dob-year')
+          - var year = (new Date()).getFullYear()
+          - for (var i = 0; i < 100; ++i)
+            option(value=year, selected=(selected==year ? 'selected' : null))= year
+            - year--
+
+h2 Boolean Templates
+p Single / Multiple radio buttons or checkboxes
+
+.field(id='field-terms')
+.field__answer
+  label
+    input.control.control--boolean(type='checkbox', name='terms', value='agreed')
+    span I agree to the terms and conditions
+
+.field(id='field-colour')
+.field__question
+  span Choose your favourite colour
+    |  
+    abbr(title='This field is required') *
+.field__answer
+  ul.list--unstyled
+    li
+      label
+        input.control.control--boolean(type='radio', name='color', value='#f00', checked='checked')
+        span Red
+    li
+      label
+        input.control.control--boolean(type='radio', name='color', value='#0f0')
+        span Green
+    li
+      label
+        input.control.control--boolean(type='radio', name='color', value='#00f')
+        span Blue
+    li
+      label
+        input.control.control--boolean(type='radio', name='color', value='#000')
+        span Black
+    li
+      label
+        input.control.control--boolean(type='radio', name='color', value='#336699')
+        span Purple
+
+h2 Button Template
+
+.field(id='field-actions')
+.button-group
+  button.button(type='reset') Clear
+  button.button.button--primary(type='submit') Submit
+
+hr
+
+h2 Error Messages
+p Add a class of `field--error` to the wrapping field and add a some feedback.
+
+.field.field--error(id='field--name')
+.field__question
+  label(for='control--name') Add a name
+.field__answer
+  input.control.control--text(type='text', name='name', id='control--name')
+.field__feedback Please enter a name
+
+.field.field--error(id='field--dinosaur')
+.field__question
+  label(for='control--dinosaur') Favourite Dinosaur
+.field__answer
+  select.control.control--choice(name='dinosaur', id='control--dinosaur')
+    - for val, i in [ 'T-Rex', 'Stegosaurus', 'Velociraptor', 'Triceratops' ]
+      option(value=i)= val
+.field__feedback Please select an option
+
+
+h1 Grid
+
+h1 Lists
+
+h1 Tables
+
+h1 Notifications

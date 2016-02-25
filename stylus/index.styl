@@ -1,7 +1,7 @@
 //
 // INDEX STYLESHEET
 // ================
-// All Stylus imports should live in here.
+// All Stylus requires should live in here.
 //
 
 
@@ -9,9 +9,9 @@
 // SETUP
 //
 
-@import 'stylus-mixins'
-@import 'responsive-grid'
-@import 'utilities/settings'
+@require 'stylus-mixins'
+@require 'responsive-grid'
+@require 'utilities/settings'
 
 
 //
@@ -19,40 +19,39 @@
 // Base HTML and generic site-wide elements
 //
 
-@import 'foundations/base'
-@import 'foundations/typography'
-@import 'foundations/structure'
-@import 'foundations/visibility'
-@import 'foundations/grid'
-@import 'foundations/table'
-@import 'foundations/list'
-@import 'foundations/icon'
-@import 'foundations/button'
-@import 'foundations/notification'
-@import 'foundations/form'
-@import 'foundations/control'
-@import 'foundations/field'
+@require 'foundations/base'
+
+// Typography
+@require 'foundations/typography'
+@require 'foundations/prose'
+
+// Layout
+@require 'foundations/grid'
+@require 'foundations/content-center'
+
+// Content
+@require 'foundations/control'
+@require 'foundations/field'
+@require 'foundations/icon'
+@require 'foundations/button'
+@require 'foundations/list'
+
+// State
+@require 'foundations/visibility'
 
 
 //
 // LAYOUT SECTIONS
 //
 
-@import 'layout/a11y-navigation'
-@import 'layout/main-header'
-@import 'layout/main-navigation'
-@import 'layout/main-content'
-@import 'layout/main-footer'
+@require 'layout/*'
 
 
 //
 // GENERIC COMPONENTS
 //
 
-
-//
-// SPECIALISED COMPONENTS
-//
+@require 'components/*'
 
 
 //
@@ -66,10 +65,18 @@
 
 if $environment == 'development'
 
-  @import 'dev/style-guide'
-  @import 'dev/sandbox'
+  @require 'style-guide/*'
+  @require 'dev/sandbox'
+  @require 'dev/browsersync'
 
-  // Change the $debug variable in settings.styl to activate debug mode.
+  // Change the $debug variable in `settings.styl` to activate debug mode.
   if $debug--mode == true
-    @import 'dev/debug'
+    @require 'dev/debug'
 
+
+//
+// PRINT
+// Added last to allow overrides of all other styles
+//
+
+@require 'foundations/print'

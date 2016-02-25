@@ -1,10 +1,18 @@
-// NEEDS REVIEW
-// * Formalise default elements/styles for this file
-
 //
 // MAIN CONTENT
 // ============
 //
 
+
 .main-content
-  //
+  padding-top $base--spacing
+  padding-bottom $base--spacing
+
+  +width-min($mq--tablet)
+    padding-top $base--spacing * 2
+    padding-bottom $base--spacing * 2
+
+  +width-min($mq--desktop)
+    min-height rem(400)
+    padding-top $base--spacing * 3
+    padding-bottom $base--spacing * 3

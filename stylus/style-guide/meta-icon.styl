@@ -1,0 +1,69 @@
+//
+// META ICONS
+// ==========
+// A visual representation of meta icons and associated information.
+// Uses real data taken from meta elements in the document head.
+//
+
+
+.meta-icon
+  text-align center
+  margin-bottom $base--spacing
+  padding $base--spacing
+  background-color shade($color--white, 10%)
+  height 100%
+
+.meta-icon__title
+  font-weight bold
+
+.meta-icon--retina
+  display inline-block
+  img
+    width 50%
+    transition transform 0.3s ease
+
+    &:hover
+      cursor zoom-in
+      transform scale(2)
+
+.meta-icon--retina-hd
+  display inline-block
+  img
+    width 33.333%
+    transition transform 0.3s ease
+
+    &:hover
+      cursor zoom-in
+      transform scale(3)
+
+
+.meta-icon--favicon
+  display inline-block
+
+.meta-icon--ios
+  img
+    border-radius 17.544%
+
+.meta-icon--ms-tile
+  display inline-block
+  width 120px
+  height 120px
+  img
+    width 64px
+    height 64px
+    margin-top 15px
+    margin-bottom 20px
+  .meta-icon__text
+    text-align left
+    padding 0 15px
+
+  &.is-dark
+    .meta-icon__text
+      color $color--white
+
+.meta-icon__text
+  color $color--black
+  font-size rem(12)
+  font-family Arial, Helvetica, sans-serif
+  margin-bottom 0
+  ellipsis()

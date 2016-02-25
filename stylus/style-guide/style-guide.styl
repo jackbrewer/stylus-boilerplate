@@ -1,0 +1,51 @@
+//
+// STYLE GUIDE
+// ===========
+//
+
+
+.style-guide-content
+  margin 20px
+
+.style-guide-nav
+  //
+
+.style-guide-nav__root
+  display none
+
+.style-guide-nav--fixed
+  position absolute
+  top 0
+  right 0
+  z-index 1000
+
+  &:before
+    content '\2630'
+    display block
+    position absolute
+    top 0
+    right 0
+    background-color $color--black
+    color $color--white
+    padding 5px 10px
+
+  nav
+    display none
+    background-color $color--black
+    padding 40px 10px 10px
+
+  strong
+  a
+    color $color--white
+    &:hover
+      color $color--white
+      text-decoration underline
+
+  p
+    display none
+
+  &:hover nav
+    display block
+
+  .style-guide-nav__root
+    display block

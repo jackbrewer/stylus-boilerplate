@@ -4,22 +4,58 @@
 //
 
 
-// REMOVE FROM DOCUMENT
-// Only use if content has no SEO / Accessibility value
+//
+// VISUALLY HIDDEN
+// Still accessible to screen-readers/bots
+//
 
-.hidden
+$vhidden =
+  position absolute !important
+  clip rect(0, 0, 0, 0) !important
+  overflow hidden !important
+  height 1px !important
+  width 1px !important
+  padding 0 !important
+  margin -1px !important
+  border 0 !important
+
+.is-vhidden
+  {$vhidden}
+
+
+//
+// REMOVED FROM DOCUMENT
+// Only use if content has no SEO / Accessibility value
+//
+
+$hidden =
   display none !important
 
+.is-hidden
+  {$hidden}
 
-// VISUALLY HIDE
-// Still accessible to screen-readers/bots
++width-max($mq--tablet - 1)
+  .is-hidden-mobile
+    {$hidden}
 
-.vhidden
-  position absolute
-  clip rect(1px, 1px, 1px, 1px)
-  overflow hidden
-  height 1px
-  width 1px
-  padding 0
-  margin 0
-  border 0
++width-range($mq--tablet, $mq--desktop - 1)
+  .is-hidden-tablet
+    {$hidden}
+
++width-min($mq--desktop)
+  .is-hidden-desktop
+    {$hidden}
+
+
+//
+// JS VISIBILITY
+// show/hide classes depending on if JS is enabled
+//
+
+.is-visible--no-js
+  .js &
+    {$hidden}
+
+.is-visible--js
+  .no-js &
+    {$hidden}

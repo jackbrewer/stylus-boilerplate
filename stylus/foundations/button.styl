@@ -10,39 +10,38 @@
 // same as each other, across various browsers.
 //
 
-.btn
+.button
   display inline-block
-  border none
+  border 0
   vertical-align middle
   cursor pointer
   overflow visible // removes padding in IE
 
   // Presentational Styles
-  height 3em
-  padding 0 1em
-  line-height @height
+  padding 0.5em 1em
+  line-height 1.2
   font-size 1em
   font-family inherit
   color inherit
   background-color $color--grey
+  text-align center
 
   &:focus
   &:hover
     text-decoration none
     background-color lighten($color--grey, 10%)
+    outline 0
 
   &:active
     background-color darken($color--grey, 20%)
 
-  &:focus
-    outline 0
 
 //
 // BUTTON MODIFIERS
 // Remember to add button variation modifier examples to the style guide page.
 //
 
-.btn--primary
+.button--primary
   color $color--white
   background-color $color--primary
 
@@ -54,12 +53,24 @@
   &:active
     background-color darken($color--primary, 20%)
 
+
+//
+// DISABLED BUTTON
+//
+
+.button[disabled]
+.button.is-disabled
+  opacity 0.75
+  user-select none
+  pointer-events none
+
+
 //
 // BUTTON GROUP
 // Contains multiple buttons and adds spacing between them.
 //
 
-.btn--block
+.button--block
   display block
   width 100%
 
@@ -69,8 +80,8 @@
 // Contains multiple buttons and adds spacing between them.
 //
 
-.btn-group
-  .btn + .btn
+.button-group
+  .button + .button
     margin-left 0.5em
 
 
@@ -80,13 +91,11 @@
 //
 
 .text-btn
+  @extend $default-link
   padding 0
   margin 0
-  border none
+  border 0
   background none
   cursor pointer
-  font inherit
-  @extend a
-
-  &:focus
-    outline none
+  font-family inherit
+  font-size inherit

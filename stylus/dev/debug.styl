@@ -76,7 +76,7 @@ img[alt='']
 
 // Check for links with empty, '#', or 'javascript' href attributes.
 // Also check for the obsolete 'name' attribute.
-a[href=']
+a[href='']
   debugError('Empty href attribute')
 a[href='#']
   debugWarning('# as href attribute')
@@ -95,10 +95,12 @@ a[target]
 //
 
 // Lists should only contain 'li' elements as direct children.
+//@stylint off
 ul,
 ol
   & > *:not(li)
     debugError('Lists should only contain “li” elements as direct children')
+//@stylint on
 
 
 //
@@ -142,12 +144,3 @@ textarea:not([cols])
 input[type=submit]:not([value])
 input[type=submit][value='']
   debugError('Submit button needs a “value” attribute')
-
-
-//
-// ADDITIONAL CHECKS
-//
-
-// Check for variable misuse resulting in undefined classes
-[class*='undefined']
-  debugAdditional('Class name of “undefined”')
